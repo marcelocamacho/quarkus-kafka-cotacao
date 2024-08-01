@@ -3,12 +3,14 @@ package org.br.mineradora.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.jackson.Jacksonized;
 
 @Jacksonized // permite que essa classe e esses atributos sejam lidos como jsons.
 @Data //Cria todos os getters e setters
 @Builder //permite ter várias combinações de assinaturas de construtor com diferentes variáveis.
 @AllArgsConstructor //cria um construtor padrão com todos os argumentos disponíveis.
+@NoArgsConstructor
 public class USDBRL {
     public String code;
     public String codein;

@@ -3,8 +3,6 @@ package org.br.mineradora.service;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.br.mineradora.client.CurrencyPriceClient;
 import org.br.mineradora.dto.CurrencyPriceDTO;
 import org.br.mineradora.dto.QuotationDTO;
@@ -12,15 +10,15 @@ import org.br.mineradora.entity.QuotationEntity;
 import org.br.mineradora.message.KafkaEvents;
 import org.br.mineradora.repository.QuotationRepository;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+
 
 @ApplicationScoped
 public class QuotationService {
 
     @Inject
-    @RestClient() //Precisa usar uma interface(que está sendo injetada) que vai trazer informações de fora da aplicação
+    @RestClient //Precisa usar uma interface(que está sendo injetada) que vai trazer informações de fora da aplicação
     CurrencyPriceClient currencyPriceClient;
 
     @Inject
