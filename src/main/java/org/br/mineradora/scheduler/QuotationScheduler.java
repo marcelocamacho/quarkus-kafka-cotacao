@@ -2,13 +2,11 @@ package org.br.mineradora.scheduler;
 
 import io.quarkus.scheduler.Scheduled;
 import org.br.mineradora.service.QuotationService;
-import org.br.mineradora.message.KafkaEvents;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class QuotationScheduler {
