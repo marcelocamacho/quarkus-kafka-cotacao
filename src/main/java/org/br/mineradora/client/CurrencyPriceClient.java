@@ -8,9 +8,9 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 
+//@RegisterRestClient(baseUri = "https://economia.awesomeapi.com.br") 
 @Path("/last")
 @RegisterRestClient //Registra o serviço como um consumidor
-//@RegisterRestClient(baseUri = "https://economia.awesomeapi.com.br") 
 @ApplicationScoped
 public interface CurrencyPriceClient {
     
