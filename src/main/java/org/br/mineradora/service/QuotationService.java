@@ -62,13 +62,12 @@ public class QuotationService {
         CurrencyPriceDTO currencyPriceInfo = currencyPriceClient.getPriceByPair("USD-BRL");
 
         if(updateCurrentInfoPrice(currencyPriceInfo)){
-            kafkaEvents.sendNewKafkaEvent(QuotationDTO.
-                builder().
-                currencyPrice(new BigDecimal(
-                    currencyPriceInfo.getUSDBRL()
-                    .getBid()
-                    )
-                ).date(new Date()).build());
+            kafkaEvents.sendNewKafkaEvent(QuotationDTO
+                .builder()
+                .currencyPrice(new BigDecimal(
+                    currencyPriceInfo.getUSDBRL().getBid()))
+                .date(new Date())
+                .build());
         }
     }
 
