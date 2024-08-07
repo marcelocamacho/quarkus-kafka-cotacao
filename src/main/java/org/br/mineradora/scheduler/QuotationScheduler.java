@@ -18,8 +18,15 @@ public class QuotationScheduler {
 
     @Transactional
     @Scheduled(every = "35s", identity = "task-job")
-    void schedule(){
-        LOG.info("-- Executando scheduler --");
+    void scheduleGetPrice(){
+        LOG.info("-- Executando scheduler Get Price--");
         quotationService.getCurrencyPrice();
+    }  
+
+    @Transactional
+    @Scheduled(cron = "0 4 * * *", identity = "task-job")
+    void scheduleCleanDB(){
+        LOG.info("-- Executando scheduler Clean Database --");
+        quotationService.cleanDatabase();
     }  
 }

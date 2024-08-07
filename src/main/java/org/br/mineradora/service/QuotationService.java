@@ -71,5 +71,9 @@ public class QuotationService {
         }
     }
 
+    public void cleanDatabase(){
+        quotationRepository.deleteAll();
+    }
+
     
 }
