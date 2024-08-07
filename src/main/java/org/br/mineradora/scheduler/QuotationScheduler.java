@@ -24,7 +24,7 @@ public class QuotationScheduler {
     }  
 
     @Transactional
-    @Scheduled(cron = "0 4 * * *", identity = "task-job")
+    @Scheduled(cron = "{cron.expr}")
     void scheduleCleanDB(){
         LOG.info("-- Executando scheduler Clean Database --");
         quotationService.cleanDatabase();
